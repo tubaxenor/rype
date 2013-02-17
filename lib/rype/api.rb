@@ -91,7 +91,7 @@ module Rype
         callback_interface = Class.new(DBus::Object) do
           dbus_interface "com.Skype.API.Client" do
             dbus_method :Notify, "in data:s" do |message|
-              Logger.info message+"from dbus"
+              Logger.info message
               Api.notify(message)
             end
           end
@@ -115,11 +115,11 @@ module Rype
     end
     
     def log_incoming(message)
-      Logger.debug "<- #{message}"
+      #Logger.debug "<- #{message}"
     end
  
     def log_outgoing(message)
-      Logger.debug "-> #{message}"
+      #Logger.debug "-> #{message}"
     end
   end
 end
