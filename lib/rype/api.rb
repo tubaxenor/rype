@@ -5,14 +5,14 @@ module Rype
   class Api
     class << self
       extend Forwardable
-      def_delegators :instance, :attach, :invoke, :on_notification, :notify, :thread
+      def_delegators :instance, :attach, :invoke, :on_notification, :notify, :thread, :callback
 
       def instance
         @instance ||= new
       end
     end
 
-    attr_reader :thread
+    attr_reader :thread, :callback
 
     def attach(application_name="rype")
       raise "Already attached." if attached?
