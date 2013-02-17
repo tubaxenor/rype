@@ -13,7 +13,7 @@ module Rype
   class << self
     extend Forwardable
 
-    def_delegators Rype::Api,    :instance, :attach, :thread
+    def_delegators Rype::Api,    :instance, :attach, :thread, :callback
     def_delegator  Rype::Chat,   :new, :chat
     def_delegator  Rype::Chat,   :all, :chats
     def_delegator  Rype::Events, :on
